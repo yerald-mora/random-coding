@@ -14,11 +14,14 @@ int LongestBinaryGap(int number)
 	
 	if(indexesOne.Count()==1)
 		return 0;
+
+	if(binary.Last() == '0')
+		binary = binary.Remove(indexesOne.Max()+1);
 	
 	var gaps = indexesOne
-				.Select((x,y) => binary
-									.Where((bx,by) => by> x && by < indexesOne[y+1])
-						)
+				.Select((x,y) => 
+					binary
+						.Where((bx,by) => by> x && by < indexesOne[y+1]))
 				.ToList();
 	
 	return gaps.Select(x => x.Count()).Max();
