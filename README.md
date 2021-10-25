@@ -1,2 +1,2 @@
-# randon-coding
-Several kind of pieces of code
+# Random Coding
+Several kind of pieces of code, gaming, challenges, trainings, etc...
