@@ -14,7 +14,7 @@ int[] CyclicRotation(int[] a, int k)
 	{
 		int lastIndex = a.Length - 1;
 		int[] lastElement = new int[] { a[lastIndex] };
-		int[] elementsExceptLast = a[0..(lastIndex)];
+		int[] elementsExceptLast = a.Take(lastIndex).ToArray();//a[new Range(0, lastIndex)];//a[0..(lastIndex)];
 
 		a = lastElement.Concat(elementsExceptLast).ToArray();
 		k -= 1;
